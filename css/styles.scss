@@ -1,0 +1,356 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+	"farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Reem Kufi Ink', sans-serif;
+}
+html {
+	scroll-behavior: smooth;
+}
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+	.nav__menu {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		background-color: #272934;
+		width: 75%;
+		height: 100%;
+		padding: 4.5rem 0 0 3rem;
+		transition: right .4s;
+
+	}
+}
+
+body {
+	background-color: #21232C;
+	color: white;
+}
+ul {
+	list-style: none;
+}
+.container {
+	max-width: 1120px;
+	margin-inline: 1.5rem;
+
+}
+.grid {
+	display: grid;
+	gap: 1.5rem;
+}
+.section {
+	padding-block: 5rem 2rem;
+}
+
+/* Her har jeg min Header og Navigations styling både i forhold til mobil og computer version*/
+.header {
+	position: fixed;
+	width: 100%;
+	background-color: #21232C;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+}
+.main {
+	overflow: hidden;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+}
+.nav__logo {
+	color: white;
+}
+.nav__logo span {
+	color: green;
+}
+.nav__toggle,
+.nav__close {
+	display: flex;
+	font-size: 1.25rem;
+	color: white;
+	cursor: pointer;
+}
+.nav__link{
+	color: white;
+}
+.nav__toggle{
+	margin-right: 2rem;
+}
+.degrynes{
+	border-radius: 8px;
+	background: #009C35;
+	box-shadow: 0 8px 24px 0 #009C35;
+	padding: 16px 28px;
+	color: #F1F2F3;
+}
+.degrynesKnap{
+	margin-top: 50px;
+}
+.grøn{
+	color: #009c35;
+}
+.dr{
+	background-color: #F5CB2C;
+}
+.dv{
+background-color: #BD60D2;
+}
+.pf{
+	background-color: #B0B1AB;
+}
+.tf{
+	background-color: #ff0000;
+}
+.btn{
+	border: none;
+}
+
+ /* */
+.nav__list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 3rem;
+}
+.nav__close {
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+}
+/* Mine home styling */
+.homeData {
+	text-align: center;
+	margin-inline: 1.5rem;
+}
+.profilBillede{
+	width: 100%;
+	margin-top: 25px;
+}
+/* Containeren der omhandler mig styling */
+
+.omMig{
+	background-color: #272831;
+	row-gap: 2.5rem;
+
+}
+.omMig_data{
+	text-align: center;
+	margin-inline: 2.5rem;
+}
+
+.mineProjekter{
+	text-align: center;
+
+
+
+}
+.card-img-top{
+	border-top-left-radius: 26px;
+	border-top-right-radius: 26px;
+}
+
+.cards-top{
+	margin-top: 5rem;
+}
+.card{
+ width: 18rem;
+	background-color: #31404E;
+	border-radius: 26px;
+}
+
+.card-text, .card-title{
+	color: white;
+}
+
+.show-menu {
+	right: 0;
+}
+
+.active-link{
+	color: #009c35;
+}
+
+
+
+.færdigheder{
+	min-height: 70vh;
+	background: #272934;
+
+
+}
+
+
+.skill{
+	margin-right: 10px;
+	width: 135px;
+}
+.skills{
+	width: 100%;
+	padding: 0 20px;
+
+}
+
+.skill-name{
+	font-size: 18px;
+	font-weight: 700;
+	color: white;
+	text-transform: uppercase;
+	margin: 20px 0;
+}
+
+.skill-bar{
+	height: 14px;
+	background: #5e5e5e;
+	border-radius: 3px;
+}
+
+.skill-per{
+	height: 14px;
+	background: #009c35;
+	border-radius: 3px;
+	position: relative;
+	animation: fillBars 8s 1;
+}
+
+.skill-per::before{
+
+	content: attr(per);
+	padding: 1px 1px;
+	background: #000000;
+	border-radius: 4px;
+	font-size: 10px;
+	top: -35px;
+	right: 0;
+	transform: translateX(50%);
+}
+
+.skill-per::after{
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	background: #f1f1f1;
+	top: -10px;
+	right: 0;
+	transform: translateX(50%) rotate(45deg);
+	border-radius: 2px;
+}
+
+  /* Dette er styling til min footer samt iconer*/
+.footer{
+
+
+}
+.icons{
+	font-size: 30px;
+}
+
+.projektBillede{
+
+}
+.billedeOgTekst{
+	margin: 100px 20px;
+}
+.proTekst{
+	margin-top: 50px;
+}
+
+.videoContainer{
+	width: 100%;
+}
+.video{
+	width: 80%;
+}
+
+ .mainProj{
+	 margin-top: 100px;
+ }
+  /* Dette er styling */
+.venstre{
+  		margin-left: 30px;
+  	}                       
+.højre{
+  		margin-right: 30px;
+  	}
+.icons-margin{
+	margin-right: 5px;
+}
+@keyframes fillBars{
+	from{
+		width: 0;
+	}
+	to{
+		width: 100%;
+	}
+}
+/* Header styling større enheder */
+@media screen and (min-width: 1023px) {
+
+	.nav {
+		height: 70px;
+	}
+	.nav__close,
+	.nav__toggle {
+		display: none;
+	}
+	.nav__list {
+		flex-direction: row;
+		column-gap: 3rem;
+	}
+
+	.profilBillede{
+		width: 600px;
+	}
+	.compMedia{
+		width: 400px;
+
+	}
+	 .marginFærdigheder{
+	 	margin-left: 100px;
+	 	margin-right: 100px;
+	 }
+	.venstre{
+		margin-left: 100px;
+	}
+	.højre{
+		margin-right: 100px;
+	}
+
+}
+@media screen and (min-width: 800px){
+	.compMedia{
+		margin-top: 70px; 
+	}
+}
+@media  screen and (min-width: 992px) {
+.proTekst{
+	margin-top: 0;
+}
+	
+}
+
